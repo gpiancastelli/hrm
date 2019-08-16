@@ -2,7 +2,7 @@ This is a TypeScript interpreter of Human Resource Machine programs.
 
 [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a game by Tomorrow Corporation, where your task is to move some boxes from an input conveyor to an output conveyor, sometimes using the floor to help with processing input boxes. You complete tasks by writing small programs in an assembler-like language, which you are allowed to copy and paste outside the game. This interpreter runs those programs.
 
-Currently, the interpreter only supports the following instructions: `INBOX`, `OUTBOX`, `JUMP`, `COPYFROM`, `COPYTO`. Also, the parser is able to recognize syntactically correct programs using those instructions, but could definiely use some improvements in error detection.
+Currently, the interpreter only supports the following instructions: `INBOX`, `OUTBOX`, `JUMP`, `COPYFROM`, `COPYTO`. Also, the parser is able to recognize syntactically correct programs using those instructions, but could definitely use some improvements in error detection.
 
 This is also my first TypeScript project, so things are probably a bit messy here and there, and a lot could be improved. For example:
 
