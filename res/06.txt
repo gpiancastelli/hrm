@@ -1,0 +1,12 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+-- INPUT 8 0 5 E 0 0 1 0
+-- OUTPUT 8 5 E 1
+
+a:
+b:
+    INBOX   
+    JUMPZ    a
+    OUTBOX  
+    JUMP     b
+
+

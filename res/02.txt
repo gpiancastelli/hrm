@@ -1,0 +1,10 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+-- INPUT    A U T O E X E C
+-- OUTPUT   A U T O E X E C
+
+a:
+    INBOX   
+    OUTBOX  
+    JUMP     a
+
+

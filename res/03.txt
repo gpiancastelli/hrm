@@ -1,0 +1,13 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+-- INPUT    -99 -99 -99 -99
+-- OUTPUT   B U G
+-- RAM      0:U, 1:J, 2:X, 3:G, 4:B, 5:E
+
+    COPYFROM 4
+    OUTBOX  
+    COPYFROM 0
+    OUTBOX  
+    COPYFROM 3
+    OUTBOX  
+
+

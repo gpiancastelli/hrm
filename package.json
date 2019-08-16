@@ -1,0 +1,38 @@
+{
+  "name": "hrm",
+  "version": "1.0.0",
+  "description": "An interpreter for Human Resource Machine programs",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc --noEmit -p . && jest --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://"
+  },
+  "keywords": [
+    "interpreter",
+    "game",
+    "hrm"
+  ],
+  "author": "Giulio Piancastelli (giulio.piancastelli@gmail.com)",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

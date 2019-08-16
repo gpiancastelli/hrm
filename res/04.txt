@@ -1,0 +1,15 @@
+-- HUMAN RESOURCE MACHINE PROGRAM --
+-- INPUT    1 8 Q O 4 5
+-- OUTPUT   8 1 O Q 5 4
+-- RAM      0:null, 1:null, 2:null
+
+a:
+    INBOX   
+    COPYTO   0
+    INBOX   
+    OUTBOX  
+    COPYFROM 0
+    OUTBOX  
+    JUMP     a
+
+
