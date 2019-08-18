@@ -1,4 +1,4 @@
-export { Data, Memory, ProgramState, Instr, Inbox, Outbox, Jump, CopyFrom, CopyTo }
+export { Data, Memory, ProgramState, Instr, Inbox, Outbox, Jump, JumpZ, CopyFrom, CopyTo }
 
 type Data = number | string
 
@@ -63,6 +63,27 @@ class Jump implements Instr {
 
     execute(state: ProgramState): ProgramState {
         const counter = this.labelMap.get(this.label)
+        return {
+            input: state.input.slice(0),
+            output: state.output.slice(0),
+            memory: state.memory.slice(0),
+            register: state.register,
+            counter: counter != undefined ? counter : -1
+        }
+    }
+}
+
+class JumpZ implements Instr {
+    private label: string
+    private labelMap: Map<string, number>
+
+    constructor(label: string, labelMap: Map<string, number>) {
+        this.label = label
+        this.labelMap = labelMap
+    }
+
+    execute(state: ProgramState): ProgramState {
+        const counter = Number(state.register === 0) ? this.labelMap.get(this.label) : state.counter + 1
         return {
             input: state.input.slice(0),
             output: state.output.slice(0),

@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { CopyFrom, CopyTo, Inbox, Instr, Jump, Outbox } from './model'
+import { CopyFrom, CopyTo, Inbox, Instr, Jump, JumpZ, Outbox } from './model'
 
 export function readProgram(path: string): Instr[] {
     const instructions: Instr[] = []
@@ -9,7 +9,7 @@ export function readProgram(path: string): Instr[] {
     const lines = text.split('\n')
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim()
-        // comments
+        // comments and blank lines
         if (line.startsWith('-- ') || line.length === 0) {
             continue
         }
@@ -28,13 +28,22 @@ export function readProgram(path: string): Instr[] {
             case 'OUTBOX':
                 instructions.push(new Outbox())
                 break
-            case 'JUMP':
+            case 'JUMP': {
                 const label = args[0]
                 if (!labels.has(label)) {
                     labels.set(label, -1)
                 }
                 instructions.push(new Jump(label, labels))
                 break
+            }
+            case 'JUMPZ': {
+                const label = args[0]
+                if (!labels.has(label)) {
+                    labels.set(label, -1)
+                }
+                instructions.push(new JumpZ(label, labels))
+                break
+            }
             case 'COPYFROM':
                 instructions.push(new CopyFrom(Number(args[0])))
                 break

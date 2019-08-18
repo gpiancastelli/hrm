@@ -29,3 +29,8 @@ test('runs the fourth program', () => {
 })
 
 // TODO runs the fifth program
+
+test('runs the sixth program', () => {
+    const output = runProgram('res/06.txt', [8, 0, 5, 'E', 0, 0, 1, 0])
+    expect(output).toStrictEqual([8, 5, 'E', 1])
+})
